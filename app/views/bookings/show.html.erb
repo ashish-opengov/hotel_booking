@@ -1,0 +1,23 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @booking %>
+<% data = total_price(@booking.check_in, @booking.check_out) %>
+<table class="table">
+  <th>Per Room</th>
+  <th>Total Days</th>
+  <th>Total Amount</th>
+  <tbody>
+    <tr>
+      <td>1000</td>
+      <td><%= data[:days]%></td>
+      <td><%= data[:amount]%></td>
+    </tr>
+  </tbody>
+</table>
+
+<div>
+  <%= link_to "Edit this booking", edit_booking_path(@booking) %> |
+  <%= link_to "Back to bookings", bookings_path %>
+
+  
+</div>

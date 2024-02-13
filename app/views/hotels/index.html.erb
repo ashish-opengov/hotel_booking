@@ -1,0 +1,24 @@
+<h1>Hotels</h1>
+
+<%= form_tag(hotels_index_path, method: :get) do %>
+  <%= label_tag :location, "Filter by Location:" %>
+  <%= text_field_tag :location, params[:location] %>
+  <%= submit_tag "Filter" %>
+<% end %>
+
+
+<table>
+<tr>
+<th>Name</th>
+<th>Location</th>
+</tr>
+
+<% @hotels.each do |hotel| %>
+    <tr>
+    <td><%= hotel.name %></td>
+    <td><%= hotel.location %></td>
+    </tr>
+  <% end %>
+
+
+</table>
